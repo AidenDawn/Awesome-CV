@@ -402,6 +402,7 @@
   \def\@letterenclosure{#2}
 }
 
+\newcommand{\ratingmarker}{\faCircle}
 
 %-------------------------------------------------------------------------------
 %                Commands for extra
@@ -735,6 +736,14 @@
 \newcommand*{\cvskill}[2]{%
 	\skilltypestyle{#1} & \skillsetstyle{#2} \\
 }
+
+% \newcommand*{\cvskill}[3]{%
+%   \skilltypestyle{#1} &
+%   \skillsetstyle{#2} &
+%   \foreach \x in {1,...,5}{%
+%     \space{\ifnumgreater{\x}{#3}{\color{awesome-red}}{\color{gray}}\ratingmarker}
+%   } \\
+% }
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
