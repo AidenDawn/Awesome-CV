@@ -92,6 +92,8 @@
 }
 % Solves issues Warning: File `cv.out' has changed
 \RequirePackage{bookmark}
+% Needed to allow multiple columns in main file
+\RequirePackage{multicol}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -734,7 +736,10 @@
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
-	\skilltypestyle{#1} & \skillsetstyle{#2} \\
+\skillsetstyle{#1}\hfill
+\foreach \x in {1,...,5}{%
+  \space{\footnotesize\ifnumgreater{\x}{#2}{\color{awesome!30}}{\color{awesome}}\ratingmarker}}
+  \par%
 }
 
 % \newcommand*{\cvskill}[3]{%
